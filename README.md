@@ -66,7 +66,13 @@ There is one option, **Question buttons** (`buttons`):
 - `off` (the default): Claude asks in the chat, and no box appears.
 - `keep`: the box keeps Claude's question and buttons, and Claude also writes its full reply and the question in the chat.
 
-Claude Code asks for it when you enable the plugin. It's saved under `pluginConfigs` in your user `settings.json`, and you can change it there or with `/config` in a terminal session.
+`off` needs no setup. To choose `keep`, run this in a terminal, before or after installing:
+
+```bash
+claude plugin install ask-in-chat@ask-in-chat --config buttons=keep
+```
+
+Or run `/plugin configure ask-in-chat@ask-in-chat` in a Claude Code terminal session. The value is saved under `pluginConfigs` in your user `settings.json`.
 
 ## What's included
 
