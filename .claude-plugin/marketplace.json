@@ -1,0 +1,15 @@
+{
+  "name": "ask-in-chat",
+  "description": "The ask-in-chat plugin, installable straight from its own repository.",
+  "owner": {
+    "name": "Derek Denmark",
+    "url": "https://github.com/derekwden-droid"
+  },
+  "plugins": [
+    {
+      "name": "ask-in-chat",
+      "source": "./",
+      "description": "Has Claude ask its end-of-turn questions in the chat, after its full reply, instead of in the desktop app's next-step box."
+    }
+  ]
+}

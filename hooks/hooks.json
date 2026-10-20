@@ -1,0 +1,13 @@
+{
+  "description": "Before the Claude desktop app's next-step box shows a question, has Claude ask it in the chat instead, after its full reply, so the reply can't be cut off or swapped for a summary.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__ccd_turn__wrap_up",
+        "hooks": [
+          { "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/ask-in-chat.mjs", "--buttons=${user_config.buttons}"], "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}

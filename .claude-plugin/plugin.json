@@ -1,0 +1,26 @@
+{
+  "name": "ask-in-chat",
+  "displayName": "Ask in Chat",
+  "version": "1.0.0",
+  "description": "In the Claude desktop app's Code tab, has Claude ask its end-of-turn questions in the chat, after its full reply, instead of in the next-step box, where the reply around the question can be cut off or replaced by a one-line summary.",
+  "author": {
+    "name": "Derek Denmark",
+    "url": "https://github.com/derekwden-droid"
+  },
+  "homepage": "https://github.com/derekwden-droid/ask-in-chat",
+  "repository": "https://github.com/derekwden-droid/ask-in-chat",
+  "license": "MIT",
+  "keywords": ["desktop", "next-step-box", "wrap-up", "questions", "lost-reply", "hooks"],
+  "documentationUrl": "https://github.com/derekwden-droid/ask-in-chat/blob/main/README.md",
+  "supportUrl": "https://github.com/derekwden-droid/ask-in-chat/issues",
+  "privacyPolicyUrl": "https://github.com/derekwden-droid/ask-in-chat/blob/main/PRIVACY.md",
+  "userConfig": {
+    "buttons": {
+      "type": "string",
+      "title": "Question buttons",
+      "description": "off: Claude asks in the chat and the next-step box shows only its recap (the default). keep: the box keeps Claude's question and buttons, and Claude also writes its full reply and the question in the chat.",
+      "options": ["off", "keep"],
+      "default": "off"
+    }
+  }
+}
