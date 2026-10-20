@@ -4,8 +4,9 @@
 // it wants an answer, a question (`ask`) with one or two answer buttons (`actions`). A call
 // that carries a question ends the turn at the box, so a reply Claude meant to write after it
 // never appears, and a reply written just before it can be swapped for a one-line summary
-// (anthropics/claude-code#102132). The order that never loses the reply is a box with the
-// recap alone, followed by the reply itself. ask-in-chat keeps Claude on that order:
+// (anthropics/claude-code#102132). The order that never loses the reply is a wrap_up with the
+// recap alone, which draws no box, followed by the reply itself. ask-in-chat keeps Claude on
+// that order:
 // - with buttons "off" (the default) a wrap_up that carries a question is sent back once, and
 //   Claude calls it again with the recap alone, then writes its reply and the question;
 // - with buttons "keep", or when Claude sends the question again anyway, the question is taken

@@ -9,13 +9,13 @@ So you get asked to approve a draft you never saw, or to pick between options th
 
 It isn't rare. In one real Code tab session on Windows (Claude Code 2.1.299), 3 of the 4 question boxes Claude ended a turn with came with no reply text at all after its last tool call, and all 3 ended the turn at the box.
 
-ask-in-chat is a hook that keeps Claude on the one order that never loses a reply: the box with the recap alone, then the full reply, ending with the question, in the chat. Because the question is in the chat, you see it on your phone too.
+ask-in-chat is a hook that keeps Claude on the one order that never loses a reply: a recap on its own, which draws no box, and then the full reply, ending with the question, in the chat. Because the question is in the chat, you see it on your phone too.
 
 ## How it works
 
 Before the box is filled, the hook looks at the call. A box that asks nothing goes through untouched. For a box with a question:
 
-- **`off` (the default).** The call is sent back once. Claude calls it again with the recap alone, then writes its full reply as its last message, ending with the question and the choices written out. The box shows only the recap.
+- **`off` (the default).** The call is sent back once. Claude calls it again with the recap alone, then writes its full reply as its last message, ending with the question and the choices written out. No box appears: a recap on its own only becomes the session's status line in the sidebar. In live tests the sent-back call didn't show up in the chat either, so all you see is the reply and its question.
 - **`keep`.** The question is taken out of what the app receives, so the turn doesn't end at the box, and Claude writes its full reply and the question as its last message. The app draws the box from Claude's own call, which a hook can't change, so the question and buttons still show, and clicking one still works.
 
 If Claude puts a question in the box again in the same turn anyway, the hook takes it out instead of sending it back a second time, so it never loops.
@@ -63,7 +63,7 @@ Each time, the draft, the names or the list of changes appears in the chat, foll
 
 There is one option, **Question buttons** (`buttons`):
 
-- `off` (the default): Claude asks in the chat, and the box shows only its recap.
+- `off` (the default): Claude asks in the chat, and no box appears.
 - `keep`: the box keeps Claude's question and buttons, and Claude also writes its full reply and the question in the chat.
 
 Claude Code asks for it when you enable the plugin. It's saved under `pluginConfigs` in your user `settings.json`, and you can change it there or with `/config` in a terminal session.
