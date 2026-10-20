@@ -19,7 +19,6 @@
       "type": "string",
       "title": "Question buttons",
       "description": "off: Claude asks in the chat, and no next-step box appears (the default). keep: the box keeps Claude's question and buttons, and Claude also writes its full reply and the question in the chat.",
-      "options": ["off", "keep"],
       "default": "off"
     }
   }
